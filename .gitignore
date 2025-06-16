@@ -1,0 +1,38 @@
+# Node.js
+node_modules/
+.pnp/
+.pnp.js
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+
+# React
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+*.dockerignore
+
+# Kubernetes
+*.kubeconfig
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+.Trashes
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/

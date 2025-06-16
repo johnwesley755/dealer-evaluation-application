@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dealer-pricing
+  labels:
+    app: dealer-pricing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dealer-pricing
+  template:
+    metadata:
+      labels:
+        app: dealer-pricing
+    spec:
+      containers:
+      - name: dealer-pricing
+        image: dealer-pricing:latest
+        imagePullPolicy: Never  # Use local image
+        ports:
+        - containerPort: 3001
+        resources:
+          limits:
+            cpu: "0.5"
+            memory: "256Mi"
+          requests:
+            cpu: "0.2"
+            memory: "128Mi"

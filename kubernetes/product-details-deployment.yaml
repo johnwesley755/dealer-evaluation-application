@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-details
+  labels:
+    app: product-details
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-details
+  template:
+    metadata:
+      labels:
+        app: product-details
+    spec:
+      containers:
+      - name: product-details
+        image: product-details:latest
+        imagePullPolicy: Never  # Use local image
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: "0.5"
+            memory: "256Mi"
+          requests:
+            cpu: "0.2"
+            memory: "128Mi"
